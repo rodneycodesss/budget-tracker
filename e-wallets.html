@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Wallet Connections</title>
+    <link rel="stylesheet" href="styles/e-wallets.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">💰 Budget Tracker</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="e-wallets.html" class="active">E-Wallets</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>Connect Your E-Wallets</h1>
+            <p>Sync your transactions automatically with your favorite e-wallet apps.</p>
+        </div>
+    </header>
+
+    <!-- Wallet Connection Section -->
+    <main class="wallets-container">
+        <h2>Available E-Wallets</h2>
+        <div class="wallet-grid">
+            <div class="wallet-card" onclick="connectWallet('PayPal')">
+                <img src="assets/paypal-logo.png" alt="PayPal" />
+                <h3>PayPal</h3>
+                <p>Securely connect your PayPal account to track transactions automatically.</p>
+                <button>Connect</button>
+            </div>
+            <div class="wallet-card" onclick="connectWallet('Google Pay')">
+                <img src="assets/google-pay-logo.png" alt="Google Pay" />
+                <h3>Google Pay</h3>
+                <p>Sync your Google Pay transactions for seamless tracking.</p>
+                <button>Connect</button>
+            </div>
+            <div class="wallet-card" onclick="connectWallet('Apple Pay')">
+                <img src="assets/apple-pay-logo.png" alt="Apple Pay" />
+                <h3>Apple Pay</h3>
+                <p>Integrate your Apple Pay account for automatic updates.</p>
+                <button>Connect</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Budget Tracker. Built with ❤️ for better financial management.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/e-wallets.js"></script>
+</body>
+</html>
