@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>c
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,14 @@
     <!-- Updated Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        content: ["./index.html"],
+        theme: {
+          extend: {},
+        },
+      }
+    </script>
 </head>
 <body class="bg-gray-900 text-gray-200 font-sans">
     <!-- Navbar -->
@@ -122,6 +130,17 @@
             </table>
         </section>
 
+        <!-- Currency and Date Section -->
+        <div class="currency-date-container" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+            <div>
+                <label for="currency-select"><strong>Currency:</strong></label>
+                <select id="currency-select" class="text-blue-600 bg-gray-800 border border-gray-600 rounded px-2 py-1"></select>
+            </div>
+            <div>
+                <span id="last-update"><strong>Last update:</strong> Never</span>
+            </div>
+        </div>
+
         <!-- Summary Section -->
         <section class="mb-8 text-center">
             <h3 class="text-xl font-semibold mb-4">Summary</h3>
@@ -135,46 +154,6 @@
     <footer class="bg-gray-800 text-center py-4">
         <p class="text-gray-400">&copy; 2025 Budget Tracker. Built with ❤️ for better financial management.</p>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Handle transaction form submission
-            const transactionForm = document.getElementById('transaction-form');
-            transactionForm.addEventListener('submit', function (event) {
-                event.preventDefault();
-                const description = document.getElementById('description').value;
-                const amount = document.getElementById('amount').value;
-                const type = document.getElementById('transaction-type').value;
-
-                if (description && amount && type) {
-                    console.log(`Transaction Added: ${description}, ${amount}, ${type}`);
-                    // Add logic to update the transaction table and summary
-                }
-            });
-
-            // Handle quick add buttons
-            const quickAddButtons = document.querySelectorAll('.quick-add-btn');
-            quickAddButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    const description = button.getAttribute('data-description');
-                    const amount = button.getAttribute('data-amount');
-                    const type = button.getAttribute('data-type');
-
-                    console.log(`Quick Add: ${description}, ${amount}, ${type}`);
-                    // Add logic to update the transaction table and summary
-                });
-            });
-
-            // Handle filter buttons
-            const filterButtons = document.querySelectorAll('[data-filter]');
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    const filter = button.getAttribute('data-filter');
-                    console.log(`Filter applied: ${filter}`);
-                    // Add logic to filter transactions
-                });
-            });
-        });
-    </script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
