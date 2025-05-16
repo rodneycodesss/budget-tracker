@@ -131,11 +131,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('transaction-table').addEventListener('click', function(e) {
         if (e.target.classList.contains('delete-btn')) {
-            const idx = e.target.getAttribute('data-idx');
-            transactions.splice(idx, 1);
-            renderTable();
-            updateSummary();
-            updateLastUpdate();
+            const row = e.target.closest('tr');
+            row.classList.add('animate-fadeOut');
+            setTimeout(() => {
+                const idx = e.target.getAttribute('data-idx');
+                transactions.splice(idx, 1);
+                renderTable();
+                updateSummary();
+                updateLastUpdate();
+            }, 400); // Match the animation duration
         }
     });
 

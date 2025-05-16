@@ -15,6 +15,17 @@
         },
       }
     </script>
+    <style>
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        transform: translateX(40px) scale(0.95);
+      }
+    }
+    .animate-fadeOut {
+      animation: fadeOut 0.4s forwards;
+    }
+    </style>
 </head>
 <body class="bg-gray-900 text-gray-200 font-sans">
     <!-- Navbar -->
@@ -44,6 +55,13 @@
             <a href="#main-content" class="mt-6 inline-block bg-white text-blue-600 font-semibold py-2 px-6 rounded hover:bg-gray-100">Get Started</a>
         </div>
     </header>
+
+    <!-- Welcome Section -->
+    <div class="w-full flex justify-center my-8">
+      <h2 class="text-2xl md:text-3xl font-bold text-blue-400 animate-pulse transition-all duration-700">
+        Welcome to your <span class="text-green-400 animate-bounce inline-block">Smart Budget Tracker</span>!
+      </h2>
+    </div>
 
     <!-- Main Content -->
     <main id="main-content" class="container mx-auto px-4 py-8">
